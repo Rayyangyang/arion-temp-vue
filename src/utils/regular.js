@@ -55,5 +55,5 @@ export default {
     if (typeof val === 'undefined') return false;
     var reg = /([\u4E00-\u9FA5]|[\uFE30-\uFFA0])+/gi;
     return reg.test(val);
-  }
+  },
 };
