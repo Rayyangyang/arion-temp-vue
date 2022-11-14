@@ -1,102 +1,115 @@
-# vue-admin-template
 
-> 这是一个极简的 vue admin 管理后台。它只包含了 Element UI & axios & iconfont & permission control & lint，这些搭建后台必要的东西。
+<h1 align="center">Arion Web Temp (vue2)</h1>
 
-[线上地址](http://panjiachen.github.io/vue-admin-template)
+技术栈
+----
+- vue2: ...
+- Element Ui 2.13.x :
 
-[国内访问](https://panjiachen.gitee.io/vue-admin-template)
+环境和依赖
+----
 
-目前版本为 `v4.0+` 基于 `vue-cli` 进行构建，若你想使用旧版本，可以切换分支到[tag/3.11.0](https://github.com/PanJiaChen/vue-admin-template/tree/tag/3.11.0)，它不依赖 `vue-cli`。
+- node
+- yarn
+- webpack
+- eslint
+- husky
+- @vue/cli
+- sass
 
-## Extra
 
-如果你想要根据用户角色来动态生成侧边栏和 router，你可以使用该分支[permission-control](https://github.com/PanJiaChen/vue-admin-template/tree/permission-control)
 
-## 相关项目
+项目下载和运行
+----
 
-- [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
-
-- [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
-
-- [vue-typescript-admin-template](https://github.com/Armour/vue-typescript-admin-template)
-
-- [awesome-project](https://github.com/PanJiaChen/vue-element-admin/issues/2312)
-
-写了一个系列的教程配套文章，如何从零构建后一个完整的后台项目:
-
-- [手摸手，带你用 vue 撸后台 系列一(基础篇)](https://juejin.im/post/59097cd7a22b9d0065fb61d2)
-- [手摸手，带你用 vue 撸后台 系列二(登录权限篇)](https://juejin.im/post/591aa14f570c35006961acac)
-- [手摸手，带你用 vue 撸后台 系列三 (实战篇)](https://juejin.im/post/593121aa0ce4630057f70d35)
-- [手摸手，带你用 vue 撸后台 系列四(vueAdmin 一个极简的后台基础模板,专门针对本项目的文章,算作是一篇文档)](https://juejin.im/post/595b4d776fb9a06bbe7dba56)
-- [手摸手，带你封装一个 vue component](https://segmentfault.com/a/1190000009090836)
-
-## Build Setup
-
-```bash
-# 克隆项目
-git clone https://github.com/PanJiaChen/vue-admin-template.git
-
-# 进入项目目录
-cd vue-admin-template
-
-# 安装依赖
-npm install
-
-# 建议不要直接使用 cnpm 安装以来，会有各种诡异的 bug。可以通过如下操作解决 npm 下载速度慢的问题
+- 安装依赖
+```
 npm install --registry=https://registry.npm.taobao.org
-
-# 启动服务
-npm run dev
 ```
 
-浏览器访问 [http://localhost:9528](http://localhost:9528)
-
-## 发布
-
-```bash
-# 构建测试环境
-npm run build:stage
-
-# 构建生产环境
-npm run build:prod
+- 开发模式运行
+```
+yarn dev
 ```
 
-## 其它
-
-```bash
-# 预览发布环境效果
-npm run preview
-
-# 预览发布环境效果 + 静态资源分析
-npm run preview -- --report
-
-# 代码格式检查
-npm run lint
-
-# 代码格式检查并自动修复
-npm run lint -- --fix
+- 编译项目
+```
+yarn build
 ```
 
-更多信息请参考 [使用文档](https://panjiachen.github.io/vue-element-admin-site/zh/)
+- Lints and fixes files
+```
+yarn lint
+```
 
-## 购买贴纸
+Eslint 规则
+----
+- 单引号为主
+- 代码结束加上分号
+- 箭头函数只有一个参数忽略括号
+- 构造函数大写
+- 未改变的变量使用const声明
+- script内的 钩子函数顺序
+- order: 
+  * "el"
+  * "name"
+  * "key",
+  * "parent",
+  * "functional",
+  * ["delimiters", "comments"],
+  * ["components", "directives", "filters"],
+  * "extends",
+  * "mixins",
+  * ["provide", "inject"],
+  * "ROUTER_GUARDS",
+  * "layout",
+  * "middleware",
+  * "validate",
+  * "scrollToTop",
+  * "transition",
+  * "loading",
+  * "inheritAttrs",
+  * "model",
+  * ["props", "propsData"],
+  * "emits",
+  * "setup",
+  * "asyncData",
+  * "data",
+  * "fetch",
+  * "head",
+  * "computed",
+  * "watch",
+  * "watchQuery",
+  * "LIFECYCLE_HOOKS",
+  * "methods",
+  * ["template", "render"],
+  * "renderError"
+- …………
 
-你也可以通过 购买[官方授权的贴纸](https://smallsticker.com/product/vue-element-admin) 的方式来支持 vue-element-admin - 每售出一张贴纸，我们将获得 2 元的捐赠。
 
-## Demo
+Husky提交 规则
+----
 
-![demo](https://github.com/PanJiaChen/PanJiaChen.github.io/blob/master/images/demo.gif)
+ * feat：新增功能
+ * fix：bug 修复
+ * docs：文档更新
+ * style：不影响程序逻辑的代码修改(修改空白字符，格式缩进，补全缺失的分号等，没有改变代码逻辑)
+ * refactor：重构代码(既没有新增功能，也没有修复 bug)
+ * perf：性能, 体验优化
+ * test：新增测试用例或是更新现有测试
+ * build：主要目的是修改项目构建系统(例如 glup，webpack，rollup 的配置等)的提交
+ * ci：主要目的是修改项目继续集成流程(例如 Travis，Jenkins，GitLab CI，Circle等)的提交
+ * chore：不属于以上类型的其他类型，比如构建流程, 依赖管理
+ * revert：回滚某个更早之前的提交
 
-## Browsers support
+代码行数 规则
+----
 
-Modern browsers and Internet Explorer 10+.
+- 单个函数代码块内的代码不超过100⾏
+- 单个vue不能超过600行代码
+  * 正常情况下单个文件内的代码若超过600行，应该考虑需要将代码按功能进行整合、优化、分离。
 
-| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari |
-| --------- | --------- | --------- | --------- |
-| IE10, IE11, Edge| last 2 versions| last 2 versions| last 2 versions
-
-## License
-
-[MIT](https://github.com/PanJiaChen/vue-admin-template/blob/master/LICENSE) license.
-
-Copyright (c) 2017-present PanJiaChen
+注释 规则
+----
+- 业务复杂、关键地方需要有说明注释。特别是针对状态值的
+- 组件公用需要为每个函数、每个props增加注释。另外在代码关键地方也需要加注释
