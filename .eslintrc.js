@@ -25,6 +25,15 @@ module.exports = {
       2,
       'always',
     ],
+    "vue/html-self-closing": ["error", {
+      "html": {
+        "void": "never",
+        "normal": "never",
+        "component": "always"
+      },
+      "svg": "always",
+      "math": "always"
+    }],
     'space-before-function-paren': ['error', 'never'],
     "vue/singleline-html-element-content-newline": "off",
     "vue/multiline-html-element-content-newline": "off",
