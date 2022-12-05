@@ -16,6 +16,7 @@
     "analyzer": "set analyzer=true && vue-cli-service build"
   },
   "dependencies": {
+    "@vue/composition-api": "^1.7.1",
     "axios": "0.18.1",
     "core-js": "3.6.5",
     "element-ui": "2.13.2",
