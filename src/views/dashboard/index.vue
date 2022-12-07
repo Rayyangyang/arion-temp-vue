@@ -9,7 +9,7 @@ import { ref } from '@vue/composition-api';
 export default {
   setup() {
     let name = ref('123');
-
+    console.log(123);
     return {
       name
     };
