@@ -42,7 +42,7 @@ export default {
       // 判断是否能合并
       let key = true;
       const firObj = selectedRows[0];
-      let mergeIndexArr = [];
+      // const mergeIndexArr = [];
       selectedRows.forEach((ele, i) => {
         if (firObj.role !== ele.role || firObj.sex !== ele.sex) {
           key = false;

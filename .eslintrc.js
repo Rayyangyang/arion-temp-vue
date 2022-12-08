@@ -22,6 +22,7 @@ module.exports = {
     //   }
     // }],
     // 'vue/name-property-casing': ['error', 'PascalCase'],
+    "vue/multi-word-component-names": 0,
     "vue/max-attributes-per-line": ["error", {
       "singleline": {
         "max": 10

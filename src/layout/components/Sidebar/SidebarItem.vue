@@ -33,7 +33,7 @@ import FixiOSBug from './FixiOSBug';
 
 export default {
   name: 'SidebarItem',
-  components: { Item, AppLink, },
+  components: { Item, AppLink },
   mixins: [FixiOSBug],
   props: {
     // route object
@@ -75,7 +75,7 @@ export default {
 
       // Show parent if there are no child router to display
       if (showingChildren.length === 0) {
-        this.onlyOneChild = { ... parent, path: '', noShowingChildren: true, };
+        this.onlyOneChild = { ... parent, path: '', noShowingChildren: true };
         return true;
       }
 

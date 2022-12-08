@@ -33,11 +33,11 @@ const mutations = {
 
 const actions = {
   // user login
-  login({ commit, }, userInfo) {
-    const { username, password, } = userInfo;
+  login({ commit }, userInfo) {
+    const { username, password } = userInfo;
     return new Promise((resolve, reject) => {
-      login({ username: username.trim(), password: password, }).then(response => {
-        const { data, } = response;
+      login({ username: username.trim(), password: password }).then(response => {
+        const { data } = response;
         commit('SET_TOKEN', data.token);
         setToken(data.token);
         resolve();
@@ -48,16 +48,16 @@ const actions = {
   },
 
   // get user info
-  getInfo({ commit, state, }) {
+  getInfo({ commit, state }) {
     return new Promise((resolve, reject) => {
       getInfo(state.token).then(response => {
-        const { data, } = response;
+        const { data } = response;
 
         if (!data) {
           reject('Verification failed, please Login again.');
         }
 
-        const { roles, name, avatar, } = data;
+        const { roles, name, avatar } = data;
         console.log('roles', roles);
         // roles must be a non-empty array
         if (!roles || roles.length <= 0) {
@@ -75,7 +75,7 @@ const actions = {
   },
 
   // user logout
-  logout({ commit, state, }) {
+  logout({ commit, state }) {
     return new Promise((resolve, reject) => {
       logout(state.token).then(() => {
         removeToken(); // must remove  token  first
@@ -89,7 +89,7 @@ const actions = {
   },
 
   // remove token
-  resetToken({ commit, }) {
+  resetToken({ commit }) {
     return new Promise(resolve => {
       removeToken(); // must remove  token  first
       commit('RESET_STATE');
