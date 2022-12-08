@@ -7,6 +7,9 @@ import 'element-ui/lib/theme-chalk/index.css';
 
 import '@/styles/index.scss'; // global css
 
+import VXETable from 'vxe-table';
+import 'vxe-table/lib/style.css';
+
 import App from './App';
 import store from './store';
 import router from './router';
@@ -16,6 +19,7 @@ import '@/permission'; // permission control
 import VueCompositionAPI from '@vue/composition-api';
 
 Vue.use(VueCompositionAPI);
+Vue.use(VXETable);
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
@@ -25,7 +29,7 @@ Vue.use(VueCompositionAPI);
  * please remove it before going online ! ! !
  */
 if (process.env.NODE_ENV === 'production') {
-  const { mockXHR, } = require('../mock');
+  const { mockXHR } = require('../mock');
   mockXHR();
 }
 

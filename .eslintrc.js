@@ -14,11 +14,20 @@ module.exports = {
   // add your custom rules here
   //it is base on https://github.com/vuejs/eslint-config-vue
   rules: {
-    "vue/max-attributes-per-line": [2, {
-      "singleline": 10,
+    // "vue/max-attributes-per-line": [2, {
+    //   "singleline": 10,
+    //   "multiline": {
+    //     "max": 1,
+    //     "allowFirstLine": false
+    //   }
+    // }],
+    // 'vue/name-property-casing': ['error', 'PascalCase'],
+    "vue/max-attributes-per-line": ["error", {
+      "singleline": {
+        "max": 10
+      },
       "multiline": {
         "max": 1,
-        "allowFirstLine": false
       }
     }],
     'semi': [
@@ -52,12 +61,13 @@ module.exports = {
       'properties': 'always'
     }],
     "comma-dangle": ["error", {
-      "arrays": "never",
-      "objects": "always",
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
       "imports": "never",
       "exports": "never",
       "functions": "never"
     }],
+    // "comma-dangle": ["error", "never"],
     'comma-spacing': [2, {
       'before': false,
       'after': true

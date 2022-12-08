@@ -6,6 +6,9 @@ Vue.use(Router);
 /* Layout */
 import Layout from '@/layout';
 
+// load modules
+import docOrder from './modules/docOrder';
+
 /**
  * Note: sub-menu only appear when route children.length >= 1
  * Detail see: https://panjiachen.github.io/vue-element-admin-site/guide/essentials/router-and-nav.html
@@ -50,10 +53,12 @@ export const constantRoutes = [
     children: [{
       path: 'dashboard',
       name: 'Dashboard',
-      component: () => import('@/views/dashboard/index'),
+      component: () => import('@/views/dashboard/DashboardComponent'),
       meta: { title: 'Dashboard', icon: 'dashboard', },
     }],
   },
+
+  docOrder,
 
   {
     path: '/example',
@@ -73,7 +78,7 @@ export const constantRoutes = [
         name: 'Tree',
         component: () => import('@/views/tree/index'),
         meta: { title: 'Tree', icon: 'tree', },
-      }
+      },
     ],
   },
 
@@ -86,7 +91,7 @@ export const constantRoutes = [
         name: 'Form',
         component: () => import('@/views/form/index'),
         meta: { title: 'Form', icon: 'form', },
-      }
+      },
     ],
   }
 ];
